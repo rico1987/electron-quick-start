@@ -5,7 +5,16 @@ const app = electron.app
 const BrowserWindow = electron.BrowserWindow
 
 const path = require('path')
-const url = require('url')
+
+const isDev = process.env.NODE_ENV === 'development'
+
+let config
+
+if (isDev) {
+    config = require('./config')
+} else {
+    config = {}
+}
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -15,12 +24,10 @@ function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({width: 800, height: 600})
 
+  const url = isDev ? `http://${config.dev.host}:${config.dev.port}` : `file://${__dirname}/dist/index.html`;
+
   // and load the index.html of the app.
-  mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'index.html'),
-    protocol: 'file:',
-    slashes: true
-  }))
+  mainWindow.loadURL(url)
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools()

@@ -3,7 +3,6 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -23,7 +22,7 @@ const createLintingRule = () => ({
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
-    app: './app/main.js'
+    app: './app/index.js'
   },
   output: {
     path: config.build.assetsRoot,
@@ -48,21 +47,22 @@ module.exports = {
         options: vueLoaderConfig
       },
       {
-        test: /\.scss$/,
-        use: [
-          'vue-style-loader',
-          'css-loader',
-          'sass-loader'
-        ]
+        test: /\.js$/,
+        loader: 'babel-loader?cacheDirectory',
+        include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
       },
       {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
+        test: /\.svg$/,
+        loader: 'svg-sprite-loader',
+        include: [resolve('src/icons')],
+        options: {
+          symbolId: 'icon-[name]'
+        }
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
+        exclude: [resolve('src/icons')],
         options: {
           limit: 10000,
           name: utils.assetsPath('img/[name].[hash:7].[ext]')
@@ -86,10 +86,6 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    // make sure to include the plugin!
-    new VueLoaderPlugin()
-  ],
   node: {
     // prevent webpack from injecting useless setImmediate polyfill because Vue
     // source contains it (although only uses it if it's native).

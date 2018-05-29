@@ -3,7 +3,7 @@
         <h1>{{ msg }}</h1>
         <h2>Essential Links</h2>
         <FxMain>
-            <span>bbbbb</span>
+            <span>ffff</span>
         </FxMain>
     </div>
 </template>
