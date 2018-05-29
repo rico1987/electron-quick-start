@@ -1,5 +1,5 @@
 <template>
-    <header src="fx-header" :style="{ height }">
+    <header class="fx-header" :style="{ height }">
         <slot></slot>
     </header>
 </template>

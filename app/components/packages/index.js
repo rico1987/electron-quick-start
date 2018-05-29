@@ -1,7 +1,9 @@
 import FxMain from './main/index';
+import FxHeader from './header/index';
 
 const components = [
     FxMain,
+    FxHeader,
 ];
 
 const install = (Vue) => {
@@ -15,4 +17,5 @@ if (typeof window !== 'undefined' && window.Vue) {
 export default {
     install,
     FxMain,
+    FxHeader,
 };
