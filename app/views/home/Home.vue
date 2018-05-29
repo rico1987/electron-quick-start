@@ -6,6 +6,9 @@
         <FxMain>
             <span>aaabbb</span>
         </FxMain>
+        <FxFooter>
+            <span>footer</span>
+        </FxFooter>
     </div>
 </template>
 

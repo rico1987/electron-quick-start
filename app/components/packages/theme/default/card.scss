@@ -1,0 +1,12 @@
+@import "mixins/mixins";
+@import "common/var";
+
+@include b(card) {
+    border-radius: $--card-border-radius;
+    border: 1px solid $--card-border-color;
+    background-color: $--color-white;
+    overflow: hidden;
+    color: $--color-text-primary;
+    transition: $--all-transition;
+
+}

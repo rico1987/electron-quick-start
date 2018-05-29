@@ -1,6 +1,5 @@
 @import "./config";
 @import "../common/var";
-
 /* Placeholder
  -------------------------- */
 
@@ -31,5 +30,13 @@
     $B: $namespace+'-'+$block !global;
     .#{$B} {
         @content;
+    }
+}
+
+@mixin when($state) {
+    @at-root {
+        &.#{$state-prefix + $state} {
+            @content;
+        }
     }
 }
