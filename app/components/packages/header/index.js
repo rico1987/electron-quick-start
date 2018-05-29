@@ -1,4 +1,4 @@
-import FxHeader from './src/main.vue';
+import FxHeader from './src/main';
 
 FxHeader.load = (Vue) => {
     Vue.component(FxHeader.name, FxHeader);

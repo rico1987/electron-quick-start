@@ -1,4 +1,4 @@
-import FxMain from './src/main.vue';
+import FxMain from './src/main';
 
 FxMain.load = (Vue) => {
     Vue.component(FxMain.name, FxMain);

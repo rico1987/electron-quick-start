@@ -8,9 +8,5 @@
 <script>
 export default {
     name: 'FxButton',
-    
-
-}
+};
 </script>
-
-

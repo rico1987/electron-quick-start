@@ -1,4 +1,4 @@
-import FxFooter from './src/main.vue';
+import FxFooter from './src/main';
 
 FxFooter.load = (Vue) => {
     Vue.component(FxFooter.name, FxFooter);
