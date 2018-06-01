@@ -57,5 +57,11 @@ export default {
         circle: Boolean
     },
 
+    computed: {
+        _elFormItemSize() {
+            return ()
+        }
+    }
+
 };
 </script>
