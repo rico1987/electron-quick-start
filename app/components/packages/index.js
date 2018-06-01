@@ -2,12 +2,14 @@ import FxMain from './main/index';
 import FxHeader from './header/index';
 import FxFooter from './footer/index';
 import FxCard from './card/index';
+import FxAside from './aside/index';
 
 const components = [
     FxMain,
     FxHeader,
     FxFooter,
     FxCard,
+    FxAside,
 ];
 
 const install = (Vue) => {
@@ -24,4 +26,5 @@ export default {
     FxHeader,
     FxFooter,
     FxCard,
+    FxAside,
 };

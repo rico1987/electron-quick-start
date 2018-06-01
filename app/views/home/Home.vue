@@ -4,7 +4,17 @@
             <h2>Title</h2>
         </FxHeader>
         <FxMain>
-            <span>aaabbb</span>
+            <FxAside>
+                <p>aside</p>
+            </FxAside>
+            <FxCard shadow="hover" style="width: 150px;">
+                <div slot="header" class="clearfix">
+                    <span>卡片名称</span>
+                </div>
+                <div class="card-content">
+                    <p>card content</p>
+                </div>
+            </FxCard>
         </FxMain>
         <FxFooter>
             <span>footer</span>

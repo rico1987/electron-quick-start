@@ -1,6 +1,6 @@
 <template>
     <div class="fx-card" :class="shadow ? 'is-' + shadow + '-shadow' : 'is-always-shadow'">
-        <div class="el-card__header" v-if="$slots.header || header">
+        <div class="fx-card__header" v-if="$slots.header || header">
             <slot name="header">{{ header }}</slot>
         </div>
         <div class="fx-card__body" :style="bodyStyle">
@@ -8,6 +8,7 @@
         </div>
     </div>
 </template>
+
 
 <script>
 export default {
@@ -23,4 +24,5 @@ export default {
         }
     },
 };
+
 </script>

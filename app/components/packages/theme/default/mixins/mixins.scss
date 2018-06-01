@@ -1,5 +1,6 @@
 @import "./config";
 @import "../common/var";
+@import "./function";
 /* Placeholder
  -------------------------- */
 
@@ -17,7 +18,7 @@
 
 @mixin res($key, $map: $--breakpoints) {
     @if map-has-key($map, $key) {
-        @media only screen and #{inspect(map-get($map, $key))} {
+        @media only screen and (#{inspect(map-get($map, $key))}) {
             @content;
         }
     }
@@ -37,6 +38,31 @@
     @at-root {
         &.#{$state-prefix + $state} {
             @content;
+        }
+    }
+}
+
+@mixin e($element) {
+    $E: $element !global;
+    $selector: &;
+    $currentSelector: "";
+    @each $unit in $element {
+        $currentSelector: #{$currentSelector + "." + $B + $element-separator + $unit + ","};
+    }
+    @if hitAllSpecialNestRule($selector) {
+        @at-root {
+            #{$selector} {
+                #{$currentSelector} {
+                    @content;
+                }
+            }
+        }
+    }
+    @else {
+        @at-root {
+            #{$currentSelector} {
+                @content;
+            }
         }
     }
 }
