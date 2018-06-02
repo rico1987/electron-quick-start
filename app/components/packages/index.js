@@ -3,6 +3,8 @@ import FxHeader from './header/index';
 import FxFooter from './footer/index';
 import FxCard from './card/index';
 import FxAside from './aside/index';
+import FxBadge from './badge/index';
+import FxTag from './tag/index';
 
 const components = [
     FxMain,
@@ -10,6 +12,8 @@ const components = [
     FxFooter,
     FxCard,
     FxAside,
+    FxBadge,
+    FxTag,
 ];
 
 const install = (Vue) => {
@@ -27,4 +31,6 @@ export default {
     FxFooter,
     FxCard,
     FxAside,
+    FxBadge,
+    FxTag,
 };

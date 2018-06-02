@@ -15,6 +15,7 @@
                     <p>card content</p>
                 </div>
             </FxCard>
+            <FxBadge :value="200" :max="99" class="item">数据查询</FxBadge>
         </FxMain>
         <FxFooter>
             <span>footer</span>
