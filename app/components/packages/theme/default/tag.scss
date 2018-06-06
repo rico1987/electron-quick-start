@@ -1,8 +1,0 @@
-@import "mixins/mixins";
-@import "common/var";
-
-@include b(tag) {
-    padding: $--header-padding;
-    box-sizing: border-box;
-    flex-shrink: 0;
-}
